@@ -1,0 +1,35 @@
+{
+  "name": "particle-tracing",
+  "version": "1.0.0",
+  "description": "High-performance forward photon transport, caustic simulation, and real-time streamline particle flow engine for WebGPU, Three.js, and browser graphics.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "particle-tracing",
+    "photon-mapping",
+    "caustics",
+    "ray-tracing",
+    "light-transport",
+    "threejs",
+    "webgpu",
+    "streamlines",
+    "computer-graphics"
+  ],
+  "author": "Seashyne",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seashyne/Particle-Tracing.git"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10"
+  }
+}
