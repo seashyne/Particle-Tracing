@@ -31,6 +31,7 @@ Standard backward path tracers trace rays backwards from the camera into the sce
 - **Normal & Boundary Validation**: Eliminates caustic energy bleed through thin geometric walls or opposite-facing surfaces.
 - **Chromatic Dispersion**: Cauchy dispersion model splits white light into spectral wavelength packets (rainbow prisms).
 - **Caustic Texture Baking**: Bakes 3D surface photon density into 2D float textures for seamless integration into real-time rasterizers and game engines.
+- **WebGPU WGSL Compute Acceleration**: Massively parallel GPU compute shader kernel (`src/gpu/particleTracingWgsl.ts`) simulating 100,000+ photons with zero CPU overhead and automatic fallback.
 - **Zero External Dependencies**: Pure TypeScript core with zero npm runtime dependencies.
 - **100% Permissive MIT License**: Zero copyleft contamination, enterprise and commercially safe.
 

@@ -21,6 +21,10 @@ export * from "./streamlines/streamlineAnimation.js";
 // Caustic Evaluation
 export * from "./caustics/causticAccumulator.js";
 
+// WebGPU Compute Acceleration (Massively Parallel GPU Photon Tracing)
+export * from "./gpu/particleTracingWgsl.js";
+export * from "./gpu/webgpuPhotonTracer.js";
+
 import type { BVHNode } from "./core/bvh.js";
 import type {
   LightParticle,
