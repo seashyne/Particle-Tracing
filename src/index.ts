@@ -25,6 +25,12 @@ export * from "./caustics/causticAccumulator.js";
 export * from "./gpu/particleTracingWgsl.js";
 export * from "./gpu/webgpuPhotonTracer.js";
 
+// Spectral Dispersion & Optics
+export * from "./tracer/dispersion.js";
+
+// Exporters (Blender PLY, Wavefront OBJ, CSV)
+export * from "./exporters/pointCloudExporter.js";
+
 import type { BVHNode } from "./core/bvh.js";
 import type {
   LightParticle,
