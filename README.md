@@ -5,6 +5,8 @@ Physically based forward particle and photon tracing engine with real-time strea
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8%2B-blue.svg)](https://www.typescriptlang.org/)
 [![Tests](https://img.shields.io/badge/Tests-Vitest%20Passed-green.svg)](tests/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-brightgreen.svg)](https://seashyne.github.io/Particle-Tracing/)
+[![CI](https://github.com/seashyne/Particle-Tracing/actions/workflows/ci.yml/badge.svg)](https://github.com/seashyne/Particle-Tracing/actions/workflows/ci.yml)
 
 ---
 
@@ -59,6 +61,25 @@ cd Particle-Tracing
 npm install
 npm test
 ```
+
+---
+
+## Interactive Web Demo
+
+Experience real-time forward photon transport, chromatic dispersion, and particle streamlines directly in your browser:
+
+- **Live URL**: [https://seashyne.github.io/Particle-Tracing/](https://seashyne.github.io/Particle-Tracing/)
+- **Local Dev Server**:
+  ```bash
+  npm run dev
+  ```
+
+### Demo Features
+- **Glass Lens Caustics**: Interactive refractive sphere focusing light into high-intensity floor caustics.
+- **Prism Chromatic Dispersion**: Equilateral triangular glass prism separating incident photons into wavelength bands (Red, Green, Blue).
+- **Curved Mirror Focus**: Spherical reflector demonstrating specular convergence.
+- **Live Streamline Controls**: Adjust pulse speed, glow intensity, tail length, and Catmull-Rom spline smoothing in real time.
+- **Caustic Floor Map**: 2D density accumulation texture updating dynamically as you change simulation parameters.
 
 ---
 

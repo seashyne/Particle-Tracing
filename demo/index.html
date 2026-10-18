@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Particle-Tracing | Forward Light Transport & Streamlines Demo</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="canvas-container"></div>
+
+  <!-- Header Bar -->
+  <header class="app-header">
+    <div class="header-left">
+      <div class="logo-badge">PT</div>
+      <div class="header-title-block">
+        <h1>Particle-Tracing</h1>
+        <p class="subtitle">Forward Photon Simulation & Streamlines Engine</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <div id="telemetry-badge" class="telemetry-badge">
+        <span class="status-dot"></span>
+        <span id="telemetry-text">Ready</span>
+      </div>
+      <a href="https://github.com/seashyne/Particle-Tracing" target="_blank" rel="noopener noreferrer" class="btn-github">
+        GitHub
+      </a>
+    </div>
+  </header>
+
+  <!-- Sidebar Controls HUD -->
+  <aside class="controls-panel">
+    <div class="panel-section">
+      <label class="section-label">Scene Preset</label>
+      <div class="segmented-control">
+        <button id="btn-scene-lens" class="segment-btn active" data-scene="lens">Glass Lens</button>
+        <button id="btn-scene-prism" class="segment-btn" data-scene="prism">Prism Dispersion</button>
+        <button id="btn-scene-mirror" class="segment-btn" data-scene="mirror">Curved Mirror</button>
+      </div>
+    </div>
+
+    <div class="panel-section">
+      <div class="section-header-row">
+        <label class="section-label">Photon Simulation</label>
+        <span id="label-photon-count" class="param-value">20,000</span>
+      </div>
+      <input type="range" id="input-photons" min="5000" max="60000" step="5000" value="20000" class="styled-slider" />
+
+      <div class="toggle-row">
+        <span>Chromatic Dispersion</span>
+        <label class="switch">
+          <input type="checkbox" id="input-dispersion" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="toggle-row">
+        <span>Bake Floor Caustic Map</span>
+        <label class="switch">
+          <input type="checkbox" id="input-caustic-map" checked />
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <button id="btn-retrace" class="btn-primary">
+        Run Forward Trace
+      </button>
+    </div>
+
+    <div class="panel-section">
+      <div class="section-header-row">
+        <label class="section-label">Streamlines (Particle Lines)</label>
+        <label class="switch">
+          <input type="checkbox" id="input-show-streamlines" checked />
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="slider-group">
+        <div class="param-row">
+          <span>Pulse Speed</span>
+          <span id="label-speed" class="param-value">0.8x</span>
+        </div>
+        <input type="range" id="input-speed" min="0.1" max="3.0" step="0.1" value="0.8" class="styled-slider" />
+      </div>
+
+      <div class="slider-group">
+        <div class="param-row">
+          <span>Glow Intensity</span>
+          <span id="label-glow" class="param-value">2.5x</span>
+        </div>
+        <input type="range" id="input-glow" min="0.5" max="5.0" step="0.1" value="2.5" class="styled-slider" />
+      </div>
+
+      <div class="slider-group">
+        <div class="param-row">
+          <span>Tail Length</span>
+          <span id="label-tail" class="param-value">0.25</span>
+        </div>
+        <input type="range" id="input-tail" min="0.05" max="0.5" step="0.01" value="0.25" class="styled-slider" />
+      </div>
+
+      <div class="toggle-row">
+        <span>Catmull-Rom Spline Smoothing</span>
+        <label class="switch">
+          <input type="checkbox" id="input-smoothing" checked />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="panel-section panel-footer">
+      <div class="instructions">
+        <span>Rotate: Left Click + Drag</span>
+        <span>Pan: Right Click + Drag</span>
+        <span>Zoom: Scroll Wheel</span>
+      </div>
+    </div>
+  </aside>
+
+  <script type="module" src="./main.ts"></script>
+</body>
+</html>

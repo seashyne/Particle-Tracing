@@ -1,5 +1,6 @@
 node_modules/
 dist/
+demo/dist/
 .turbo/
 .DS_Store
 Thumbs.db
